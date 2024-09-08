@@ -7,7 +7,25 @@ namespace MVC_Session2_demo
             var builder = WebApplication.CreateBuilder(args);
             var app = builder.Build();
 
-            app.MapGet("/", () => "Hello World!");
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapGet("/Home", async context =>
+                {
+                    await context.Response.WriteAsync("you are in home page");
+                });
+
+                endpoints.MapGet("/Products", async context =>
+                {
+                    await context.Response.WriteAsync("you are at product page");
+                });
+            });
+
+            app.Run(async(HttpContext)=> { await HttpContext.Response.WriteAsync("Your Requested page not found"); });
+
+            //app.MapGet("/Home", () => "Hello World!");
+           
 
             app.Run();
         }
