@@ -54,17 +54,17 @@ namespace MVC_Session2_demo
             //}); 
             #endregion
 
-            app.MapControllerRoute(
-                name:"default",
-                pattern: "/{Controller = Home}/{Action = Index}",
-                defaults: new {Controller = "Home", Action = "Index" }
-                );
+            //app.MapControllerRoute(
+            //    name:"default",
+            //    pattern: "/{Controller = Home}/{Action = Index}",
+            //    defaults: new {Controller = "Home", Action = "Index" }
+            //    );
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "/{Controller = Home}/{Action = AboutUs}",
-                defaults: new { Controller = "Home", Action = "AboutUs" }
-                );
+            //app.MapControllerRoute(
+            //    name: "default",
+            //    pattern: "/{Controller = Home}/{Action = AboutUs}",
+            //    defaults: new { Controller = "Home", Action = "AboutUs" }
+            //    );
 
             //app.Run(async(HttpContext)=> { await HttpContext.Response.WriteAsync("Your Requested page not found"); });
 
