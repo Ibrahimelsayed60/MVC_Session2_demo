@@ -4,19 +4,42 @@ namespace MVC_Session2_demo.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    //ContentResult result = new ContentResult();
+        //    //result.Content = "Hello from content result";
+
+        //    //return Redirect("/Home/AboutUs");
+
+        //    return Content("Hello from content result");
+        //}
+
+        //public string AboutUs()
+        //{
+        //    return "This is About us action";
+        //}
+
+
+        public IActionResult Index()
         {
-            //ContentResult result = new ContentResult();
-            //result.Content = "Hello from content result";
-
-            //return Redirect("/Home/AboutUs");
-
-            return Content("Hello from content result");
+            return View();
         }
 
-        public string AboutUs()
+        public IActionResult AboutUs()
         {
-            return "This is About us action";
+            return View();
         }
+
+        public IActionResult ContactUs()
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+
     }
 }
