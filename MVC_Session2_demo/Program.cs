@@ -8,11 +8,12 @@ namespace MVC_Session2_demo
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
 
             app.UseRouting();
+            app.UseStaticFiles();
 
             #region MyRegion
             //app.UseEndpoints(endpoints =>
@@ -54,11 +55,11 @@ namespace MVC_Session2_demo
             //}); 
             #endregion
 
-            //app.MapControllerRoute(
-            //    name:"default",
-            //    pattern: "/{Controller = Home}/{Action = Index}",
-            //    defaults: new {Controller = "Home", Action = "Index" }
-            //    );
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "/{Controller=Home}/{Action=Index}",
+                defaults: new { Controller = "Home", Action = "Index" }
+                );
 
             //app.MapControllerRoute(
             //    name: "default",
